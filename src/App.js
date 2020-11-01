@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, Modal } from "react-bootstrap";
 
 const pages = [1, 2, 3, 4];
+const maxPages = 4;
 
 export default class App extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ export default class App extends Component {
 
   onClickNextPage(event) {
     event.preventDefault();
-    if (this.state.page < 4) {
+    if (this.state.page < maxPages) {
       let i = this.state.page;
       i++;
       this.setState({ page: i });
@@ -52,9 +53,9 @@ export default class App extends Component {
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header>
-            <button type="button" class="close">
+            <button type="button" className="close">
               <span aria-hidden="true">×</span>
-              <span class="sr-only">Close</span>
+              <span className="sr-only">Close</span>
             </button>
             <nav role="navigation">
               <ul className="nav justify-content-center">
@@ -77,12 +78,12 @@ export default class App extends Component {
             {this.state.page === 4 && <div>Step 4</div>}
           </Modal.Body>
           <Modal.Footer className="justify-content-center">
-            {this.state.page < 4 && (
+            {this.state.page < maxPages && (
               <Button variant="primary" onClick={this.onClickNextPage}>
                 Next Page
               </Button>
             )}
-            {this.state.page === 4 && (
+            {this.state.page === maxPages && (
               <Button variant="primary" onClick={this.onClickNextPage}>
                 Done
               </Button>
