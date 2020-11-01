@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# Modal App for new user intros or stepper navigation
+
+Features a dot nav using state to track the active page.
+Really simple user case clicking next advances the current page. When it hits the final page next page becomes a close button.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
